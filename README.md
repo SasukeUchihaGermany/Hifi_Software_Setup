@@ -446,9 +446,8 @@ Also general tips:
 
 ## Step23) ENJOY!
 
-You are now listening to reference-grade audio.
-Money well spent? 
-                    I'd say so.
+You are now listening to true reference-grade audio.
+Everything from here is preference.
 
 ---
 
