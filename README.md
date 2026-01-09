@@ -1,6 +1,6 @@
 # Headphone HiFi Software Setup (Windows + foobar2000 + WASAPI Exclusive + FIR Convolution EQ + DSP + Hotkeys)
 
-If you own **any headphone that appears in AutoEQ**, welcome to HiFi — you’re one setup away from **reference-grade audio** (for *your* specific headphone).
+If you own **any headphone that appears in the list below**, welcome to HiFi — you’re one setup away from **reference-grade audio** (for *your* specific headphone).
 
 AutoEQ headphone list:  
 https://github.com/jaakkopasanen/AutoEq/tree/master/results
