@@ -15,7 +15,7 @@ What we will be doing in this guide:
 
 ---
 
-## Step 1) Get FLAC audio files (don’t sabotage the chain)
+## Step 1) Get FLAC audio files
 
 MP3 is a **lossy** format. With resolving headphones, compression artifacts become obvious:
 - smeared transients
@@ -419,7 +419,7 @@ Produces **bespoke FIR correction filters** tailored exactly to your headphone a
 
 - Do not force 192/384 kHz even if your hardware is capable - resampling heavy doesn't do your audio processing or your ears many favours. 
 - Keep native rates
-- Match FIR to content sample rate instead (44.1KHz for music and 48Khz for video - unless you know what you are doing [matching per input])
+- Match FIR to content sample rate instead (44.1KHz for music and 48Khz for video (unless you want to spend the time to match per input)
 
 ### What this achieves
 Avoids unnecessary resampling and preserves signal integrity.
