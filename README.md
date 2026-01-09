@@ -5,7 +5,7 @@ If you own **any headphone that appears in the list below**, welcome to HiFi —
 AutoEQ headphone list:  
 https://github.com/jaakkopasanen/AutoEq/tree/master/results
 
-What we are doing:
+What we will be doing in this guide:
 
 - Bypassing the Windows audio mixer (no enhancements, no forced resampling)
 - Applying **headphone-specific correction** using FIR convolution (`.wav` impulse responses)
