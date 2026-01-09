@@ -438,9 +438,17 @@ Note: Your amp, depending on build can add flavour that isn't corrected in this 
 I would recommend getting a "linear classA/B" amp if you want to experience purity (I'll tell you its euphoric!)
 But people enjoy many of the flavours amps can add (vaccume tubes!)
 
+Also general tips:
+- Keep digital wires long and analogue cables shorter.
+- If you keep software and analogue volumes seperate, explore what such gain staging does to the response.
+- I recomend keep your software volume max/high and your analogue as the primary controller if you want purity.
+- Or the other way around, if you like a little 'smeared bass' effect.
+
 ## Step23) ENJOY!
 
 You are now listening to reference-grade audio.
+Money well spent? 
+                    I'd say so.
 
 ---
 
