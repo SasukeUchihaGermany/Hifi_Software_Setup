@@ -324,14 +324,15 @@ Separates raw data, targets, and generated filters cleanly.
 
 ## Step 17) Get measurement CSV
 
-From AutoEQ:
+From AutoEQ (https://github.com/jaakkopasanen/AutoEq/tree/master/results):
 ```text
 results/<Brand>/<Model>/measurements/
 ```
+Or just scroll down on that link and find your headphones.
 
 Place into:
 ```text
-C:\Audio\AutoEQ\measurements\
+C:\Audio\AutoEQ\measurements\headphone_name.csv
 ```
 
 ### What this achieves
@@ -339,7 +340,7 @@ Provides the raw frequency response data needed to compute correction.
 
 ---
 
-## Step 18) Target CSV (Harman Over-Ear 2018)
+## Step 18) Target CSV (Harman Over-Ear 2018) (https://github.com/jaakkopasanen/AutoEq/tree/master/targets)
 
 Place into:
 ```text
@@ -347,7 +348,7 @@ C:\Audio\AutoEQ\targets\Harman over-ear 2018.csv
 ```
 
 ### What this achieves
-Defines the *reference tonal balance* your headphone will be aligned to.
+Defines the *reference tonal balance* your headphone will be aligned to. Here for example I went for a Harman over ear reference curve (this is like a tuned reference benchmark), but you can come back to this and adjust it to suit your taste.
 
 ---
 
@@ -364,6 +365,7 @@ python -m autoeq --help
 
 ### What this achieves
 Creates an isolated, reproducible environment for FIR generation.
+FIR: (Finite Impulse Response) in hi-fi = a digital filter that precisely reshapes frequency and time/phase response without feedback, enabling exact EQ, linear-phase correction, and impulse control.
 
 ---
 
@@ -412,15 +414,17 @@ C:\Audio\FIR\Profiles\
 ```
 
 ### What this achieves
-Produces **bespoke FIR correction filters** tailored exactly to your headphone and preferences.
+Produces **bespoke FIR correction filters** tailored exactly to your headphone and EQ preferences which are all FIR tuned.
+-You can skip this if you prefer live EQ tweaking per track in Foobar (or chosen music player), but live EQ tuning would slightly distort phase response.
+-So I prefer starting with a FIR tuned EQ response like this, then adding minimal EQ on top per track if desired.
 
 ---
 
 ## Step 21) Sample rate rules
 
-- Do not force 192/384 kHz
+- Do not force 192/384 kHz even if your hardware is capable - resampling heavy doesn't do your audio processing or your ears many favours. 
 - Keep native rates
-- Match FIR to content sample rate
+- Match FIR to content sample rate instead (44.1KHz for music and 48Khz for video - unless you know what you are doing [matching per input])
 
 ### What this achieves
 Avoids unnecessary resampling and preserves signal integrity.
@@ -436,6 +440,7 @@ Ensure your DAC + AMP are clean-powered and isolated
 
 Note: Your amp, depending on build can add flavour that isn't corrected in this setup.
 I would recommend getting a "linear classA/B" amp if you want to experience purity (I'll tell you its euphoric!)
+Or a ClassA if your pockets are deep.
 But people enjoy many of the flavours amps can add (vaccume tubes!)
 
 Also general tips:
@@ -443,6 +448,7 @@ Also general tips:
 - If you keep software and analogue volumes seperate, explore what such gain staging does to the response.
 - I recommend keeping your software volume max/high and your analogue as the primary controller if you want purity.
 - Or the other way around, if you like a little 'smeared bass' effect.
+- Avoid optical audio cables, digital (USB) is better unless you require very long cable distance (Your DAC wants digital input, so converting to optical is 2 extra conversions on the signal). 
 
 ## Step23) ENJOY!
 
