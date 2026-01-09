@@ -15,7 +15,7 @@ What we will be doing in this guide:
 
 ---
 
-## Step 1) Get real audio files (don’t sabotage the chain)
+## Step 1) Get FLAC audio files (don’t sabotage the chain)
 
 MP3 is a **lossy** format. With resolving headphones, compression artifacts become obvious:
 - smeared transients
@@ -38,35 +38,24 @@ You eliminate codec artifacts **before** doing any DSP work. DSP can correct ton
 ## Step 2) Understand the signal chain (important context)
 
 ```text
-Audio file (native sample rate)
-→ foobar2000
+→ Audio file (native sample rate)
+→ foobar2000 (straight API to port, skips entire WindowsOS routing)
 → FIR Convolver (headphone correction profile)
 → (optional) Gain / Amplifier DSP
 → (optional) Crossfeed
+→ (optional) Live EQ input
 → (optional) Limiter
 → WASAPI Exclusive output
-→ DAC / sound card / amp
+→ Digital Signal out to USB
+→ DAC (24bit, 44.1Mhz (music) 48khz (video) is the hardware max limit of what's required for Hifi (2026))
+→ Analogue Signal (susceptible to interference)
+→ Amp (colouration possible depending on Amp)
+→ Boosted Analogue signal(most susceptible to inteferance)
 → Headphones
 ```
 
-### Why this achieves “phase-corrected” correction
+### This kind of a setup allows you to isolate every layer across the chain to enable reference-grade clean audio.
 
-Most traditional EQs (graphic / parametric) are **IIR / minimum-phase**:
-- They alter frequency response
-- They also introduce frequency-dependent **phase shift** (timing distortion)
-
-FIR convolution can be **linear-phase**:
-- Frequency response is corrected
-- Timing coherence across the band is preserved
-
-Subjectively:
-- Cleaner transients
-- More stable imaging
-- Less listening fatigue
-
-**Important nuance**
-- FIR corrects what is representable by the measurement/target
-- It cannot remove physical driver distortion or mechanical limits
 
 ---
 
@@ -85,6 +74,9 @@ Optional:
 ### What this achieves
 foobar2000 gives you a **transparent, modular, bit-perfect playback engine** with deterministic DSP ordering — unlike most consumer media players.
 
+You can also opt for any other hifi music player, I just prefer foobar due to its very modular built in expansion capability.
+The rest of this guide will refer to Foobar based setup.
+
 ---
 
 ## Step 4) Configure output: WASAPI (Exclusive)
@@ -101,9 +93,6 @@ Install:
 
 > Shared-mode alternative (not recommended here):  
 > https://www.foobar2000.org/components/view/foo_out_wasapis
-
-### What this achieves
-Adds low-level Windows audio interfaces that allow bypassing the system mixer.
 
 ---
 
@@ -136,6 +125,8 @@ Install:
 
 ### What this achieves
 Allows loading **FIR impulse-response WAV files** that encode frequency *and* phase correction in one operation.
+Meaning every headphone will have some of its own 'flavour', that you can calibrate out and tune to a reference you prefer 
+(Dont worry, you can reenable the unique flavour if that's what you prefer, or even pick a different headphone's profile from the link and calibrate to its response to hear what its flavour would be like)
 
 ---
 
@@ -149,6 +140,8 @@ https://github.com/jaakkopasanen/AutoEq/tree/master/results
 ```text
 results/<Brand>/<Model>/convolution/
 ```
+
+Or just scroll down on the link and find your headphone.
 
 ### 6.2 Download the correct FIR
 
@@ -177,7 +170,8 @@ Verification:
 - Toggle DSP on/off → audible tonal change
 
 ### What this achieves
-Your headphone is now **corrected at the system level** — not per-track, not per-app.
+Your headphone is now **corrected at the system level** — not per-track, not per-app. 
+Headphone response correction.
 
 ---
 
@@ -197,10 +191,10 @@ Stereo Convolution DSP
 → Amplifier DSP
 ```
 
-Start at **+6 dB**, loudness-match by ear.
+Start at **+6 dB**, loudness-match by ear, to EQ's profiles (not the reference profile) - more about this below.
 
 ### What this achieves
-Restores loudness lost to EQ headroom *without* altering frequency or phase response.
+Restores loudness lost to EQ headroom *without* altering frequency or phase response to match reference volume.
 
 ---
 
@@ -219,6 +213,7 @@ Convolver
 
 ### What this achieves
 Reduces extreme left/right separation, lowering fatigue during long listening sessions.
+Physically, you are feeding 10-15% of the right channels data into the left and vice versa, this sounds more natural.
 
 ---
 
@@ -272,7 +267,7 @@ Locks a known-good **baseline correction** that you can always return to.
 ## Step 13) Create DSP preset: Bass
 
 1. Load Bass FIR (See part C below on how to create this)
-2. Increase Amplifier gain until loudness matches Reference
+2. Increase Amplifier gain until loudness matches Reference (as mentioned earlier)
 3. Save preset: `Headphone – Bass`
 
 ### What this achieves
@@ -282,8 +277,8 @@ Adds low-end energy without breaking phase coherence or clipping.
 
 ## Step 14) Create DSP preset: V
 
-1. Load V-profile FIR or whatever other profile you wish yto create(See part C below on how to create this)
-2. Loudness-match
+1. Load V-profile FIR or whatever other profile you wish to create(See part C below on how to create this)
+2. Loudness-match (as mentioned earlier)
 3. Save preset: `Headphone – V`
 
 ### What this achieves
@@ -434,14 +429,14 @@ Avoids unnecessary resampling and preserves signal integrity.
 
 ## Step 22) Double check your analogue setup.
 
-Assuming you're running high-grade headphones
+If you've read this far, you're running high-grade headphones, I hope...
 Ensure your DAC + AMP are clean-powered and isolated
   -This means ideally a dedicated sound card or hardware setup
 
 Note: Your amp, depending on build can add flavour that isn't corrected in this setup.
-I would recommend getting a "linear classA/B" amp if you want to experience purity (I'll tell you its euphoric!)
+I would recommend getting a "linear classA/B" amp if you want to experience purity (I'll tell you it's euphoric!)
 Or a ClassA if your pockets are deep.
-But people enjoy many of the flavours amps can add (vaccume tubes!)
+But people enjoy many of the flavours amps can add (vaccume tubes!), so this is a point of exploration.
 
 Also general tips:
 - Keep digital wires long and analogue cables shorter.
