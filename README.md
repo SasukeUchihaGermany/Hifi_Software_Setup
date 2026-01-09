@@ -26,7 +26,7 @@ MP3 is a **lossy** format. With resolving headphones, compression artifacts beco
 - Buy/download **FLAC** (Bandcamp, Qobuz Store, HDtracks)
 - Rip your own CDs to FLAC (Exact Audio Copy on Windows)
 - Streaming (device/driver dependent): Qobuz, TIDAL, Apple Music Lossless
-- Searching for freely available FLAC mirrors often surfaces archival/legal sources (use judgement)
+- Searching Google (or Reddit!) for free FLAC download links (use own judgement).
 
 Download a few reference tracks you know well — you’ll reuse them during setup.
 
