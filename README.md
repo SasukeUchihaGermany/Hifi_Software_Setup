@@ -1,8 +1,8 @@
 # Headphone HiFi Software Setup (Windows + foobar2000 + WASAPI Exclusive + FIR Convolution EQ + DSP + Hotkeys)
 
-If you own **any headphone that appears in the list below**, welcome to HiFi — you’re one setup away from **reference-grade audio** (for *your* specific headphone).
+If you own **any headphone that appears in the list below**, welcome to HiFi — you’re this setup away from **reference-grade audio** (for *your* specific headphone).
 
-AutoEQ headphone list:  
+Headphone list:  
 https://github.com/jaakkopasanen/AutoEq/tree/master/results
 
 What we will be doing in this guide:
@@ -17,7 +17,7 @@ What we will be doing in this guide:
 
 ## Step 1) Get FLAC audio files
 
-MP3 is a **lossy** format. With resolving headphones, compression artifacts become obvious:
+MP3 is a **lossy** format. With resolving headphones, compression artefacts become obvious:
 - smeared transients
 - grainy cymbals
 - collapsed soundstage
@@ -31,7 +31,7 @@ MP3 is a **lossy** format. With resolving headphones, compression artifacts beco
 Download a few reference tracks you know well — you’ll reuse them during setup.
 
 ### What this achieves
-You eliminate codec artifacts **before** doing any DSP work. DSP can correct tonality and phase — it cannot restore information removed by lossy compression.
+You eliminate codec artefacts **before** doing any DSP work. DSP can correct tonality and phase — it cannot restore information removed by lossy compression.
 
 ---
 
@@ -343,7 +343,7 @@ C:\Audio\AutoEQ\targets\Harman over-ear 2018.csv
 ```
 
 ### What this achieves
-Defines the *reference tonal balance* your headphone will be aligned to. Here for example I went for a Harman over ear reference curve (this is like a tuned reference benchmark), but you can come back to this and adjust it to suit your taste.
+Defines the *reference tonal balance* your headphone will be aligned to. Here, for example, I went for a Harman over-ear reference curve (this is like a tuned reference benchmark), but you can come back to this and adjust it to suit your taste.
 
 ---
 
@@ -409,9 +409,9 @@ C:\Audio\FIR\Profiles\
 ```
 
 ### What this achieves
-Produces **bespoke FIR correction filters** tailored exactly to your headphone and EQ preferences which are all FIR tuned.
+Produces **bespoke FIR correction filters** tailored exactly to your headphone and EQ preferences, which are all FIR tuned.
 -You can skip this if you prefer live EQ tweaking per track in Foobar (or chosen music player), but live EQ tuning would slightly distort phase response.
--So I prefer starting with a FIR tuned EQ response like this, then adding minimal EQ on top per track if desired.
+-So I prefer starting with a FIR-tuned EQ response like this, then adding minimal EQ on top per track if desired.
 
 ---
 
@@ -419,7 +419,7 @@ Produces **bespoke FIR correction filters** tailored exactly to your headphone a
 
 - Do not force 192/384 kHz even if your hardware is capable - resampling heavy doesn't do your audio processing or your ears many favours. 
 - Keep native rates
-- Match FIR to content sample rate instead (44.1KHz for music and 48Khz for video (unless you want to spend the time to match per input)
+- Match FIR to content sample rate instead (44.1KHz for music and 48Khz for video, unless you want to spend the time to match per input)
 
 ### What this achieves
 Avoids unnecessary resampling and preserves signal integrity.
@@ -427,23 +427,24 @@ Avoids unnecessary resampling and preserves signal integrity.
 ---
 
 
-## Step 22) Double check your analogue setup.
+## Step 22) Double-check your analogue setup.
 
-If you've read this far, you're running high-grade headphones, I hope...
+If you've read this far, you're likely running high-grade headphones,
 Ensure your DAC + AMP are clean-powered and isolated
-  -This means ideally a dedicated sound card or hardware setup
+  -This means a dedicated sound card or hardware setup
 
-Note: Your amp, depending on build can add flavour that isn't corrected in this setup.
+Note: Your amp, depending on build, can add flavour that isn't corrected in this setup.
 I would recommend getting a "linear classA/B" amp if you want to experience purity (I'll tell you it's euphoric!)
 Or a ClassA if your pockets are deep.
-But people enjoy many of the flavours amps can add (vaccume tubes!), so this is a point of exploration.
+But people enjoy many of the flavours amps can add (vacuum tubes!), so this is a point of exploration.
 
-Also general tips:
-- Keep digital wires long and analogue cables shorter.
-- If you keep software and analogue volumes seperate, explore what such gain staging does to the response.
+Also, general tips:
+- Keep digital wires longer and analogue cables shorter.
+- Avoid optical audio cables; digital (USB) is better unless you require a very long cable distance (Your DAC wants digital input, so converting to optical is 2 extra conversions on the signal). 
+- If you keep software and analogue volumes separate, explore what such gain staging does to the response.
 - I recommend keeping your software volume max/high and your analogue as the primary controller if you want purity.
 - Or the other way around, if you like a little 'smeared bass' effect.
-- Avoid optical audio cables, digital (USB) is better unless you require very long cable distance (Your DAC wants digital input, so converting to optical is 2 extra conversions on the signal). 
+
 
 ## Step23) ENJOY!
 
