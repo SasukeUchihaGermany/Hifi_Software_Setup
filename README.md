@@ -441,13 +441,13 @@ But people enjoy many of the flavours amps can add (vaccume tubes!)
 Also general tips:
 - Keep digital wires long and analogue cables shorter.
 - If you keep software and analogue volumes seperate, explore what such gain staging does to the response.
-- I recomend keep your software volume max/high and your analogue as the primary controller if you want purity.
+- I recommend keeping your software volume max/high and your analogue as the primary controller if you want purity.
 - Or the other way around, if you like a little 'smeared bass' effect.
 
 ## Step23) ENJOY!
 
 You are now listening to true reference-grade audio.
-Everything from here is preference.
+Everything from here is just preference.
 
 ---
 
